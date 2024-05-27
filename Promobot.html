@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Университет</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #004080;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #00264d;
+            color: #ffffff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            width: calc(33.33% - 20px);
+            margin-bottom: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-content {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .card-date {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .card-type {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .card-description {
+            font-size: 14px;
+            overflow: hidden;
+            height: 0;
+            transition: height 0.3s ease;
+        }
+
+        .card-button {
+            background-color: #004080;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: block;
+            margin: 10px auto;
+            width: 80%;
+        }
+
+        .section-header {
+            width: 100%;
+            font-size: 24px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+            color: #333;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .card {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .card {
+                width: calc(50% - 20px);
+            }
+
+            nav a {
+                margin: 0 5px;
+                font-size: 14px;
+            }
+
+            .card-content {
+                padding: 5px;
+            }
+
+            .card-title {
+                font-size: 16px;
+            }
+
+            .card-date,
+            .card-type {
+                font-size: 12px;
+            }
+
+            .card-button {
+                padding: 5px;
+                width: 90%;
+            }
+
+            .section-header {
+                font-size: 20px;
+                margin-top: 15px;
+                margin-bottom: 5px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .card {
+                width: 100%;
+            }
+
+            header {
+                padding: 10px;
+                font-size: 20px;
+            }
+
+            nav {
+                padding: 5px;
+            }
+
+            nav a {
+                margin: 0 3px;
+                font-size: 12px;
+            }
+
+            .container {
+                padding: 0 10px;
+            }
+
+            .card-content {
+                padding: 5px;
+            }
+
+            .card-title {
+                font-size: 14px;
+            }
+
+            .card-date,
+            .card-type {
+                font-size: 12px;
+            }
+
+            .card-button {
+                padding: 5px;
+                width: 90%;
+            }
+
+            .section-header {
+                font-size: 18px;
+                margin-top: 10px;
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Мероприятия САМГТУ</h1>
+    </header>
+    <nav>
+        <a id="sort-date">Сортировка по дате</a>
+        <a id="sort-type">Сортировка по типу мероприятия</a>
+    </nav>
+    <div class="container">
+        <h2 style="text-align: center;">Мероприятия</h2>
+        <div class="cards-container" id="cards-container">
+            <div class="card" data-date="2024-05-16" data-type="Научное">
+                <div class="card-content">
+                    <h3 class="card-title">Региональный семинар «Актуальные проблемы надежности машин и оборудования»</h3>
+                    <p class="card-date">16.05.2024-17.05.2024</p>
+                    <p class="card-type">Научное</p>
+                    <p class="card-description">Тематика семинара:<br />
+
+                      1.Информационные технологии и автоматизация технологических процессов в нефтегазовой сфере.<br />
+                      2.Обеспечение высокого ресурса машин и оборудования.<br />
+                      3.Выявление причин отказов нефтегазового оборудования.<br />
+                      4.Новые материалы, приборы контроля качества и методы исследований для обеспечения надежности машин и оборудования.<br />
+                      5.Трение и износ в машинах.<br />
+                      6.Защита нефтегазового оборудования от коррозии.<br />
+                      7.Пожарная и промышленная безопасность объектов нефтегазовой отрасли.<br />
+                      8.Инновации в области обеспечения качества оборудования.</p>
+                    <button class="card-button">Увидеть больше</button>
+                </div>
+            </div>
+            <div class="card" data-date="2024-04-24" data-type="Экономическое">
+                <div class="card-content">
+                    <h3 class="card-title">Всероссийская научно-практическая конференция с международным участием «Актуальные проблемы устойчивого развития в условиях неопределенности»</h3>
+                    <p class="card-date">24.04.2024-25.04.2024</p>
+                    <p class="card-type">Общественное</p>
+                    <p class="card-description">Секции конференции:<br />
+                      1.Проблемы функционирования предприятий в контексте регионального развития<br />
+                      2.Государственное и муниципальное управление в геоэкономических условиях<br />
+                      3.Ключевые угрозы экономической безопасности государства и бизнеса в условиях глобальных социально-экономических сдвигов<br />
+                      4.Управление инновационными и инвестиционными процессами в условиях цифровой экономики<br />
+                      5.Интеграция университетов в социально-экономическое развитие регионов</p>
+                    <button class="card-button">Увидеть больше</button>
+                </div>
+            </div>
+            <div class="card" data-date="2024-10-15" data-type="Филосовское">
+                <div class="card-content">
+                    <h3 class="card-title">Всероссийский научный семинар «Философия Ницше и современность»</h3>
+                    <p class="card-date">15.10.2024</p>
+                    <p class="card-type">Филосовское</p>
+                    <p class="card-description"></p>
+                    
+                </div>
+            </div>
+            <div class="card" data-date="2024-10-22" data-type="научно-техническая">
+                <div class="card-content">
+                    <h3 class="card-title">Международная научно-техническая конференция «ИНТЕРСТРОЙМЕХ-2024</h3>
+                    <p class="card-date">22.10.2024</p>
+                    <p class="card-type">научно-техническая</p>
+                    <p class="card-description">Цель конференции:<br />Обсуждение проблемных теоретических вопросов, 
+                      важных задач строительного производства, результатов исследований и внедрения научно-технических разработок, 
+                      требуемых для создания конкурентоспособных машин, средств механизации и автоматизации. Формирование стратегии и координация решения 
+                      теоретических вопросов и прикладных задач необходимых для качественной подготовки научных кадров (докторов и кандидатов технических наук) и специалистов.</p>
+                    <button class="card-button">Увидеть больше</button>
+                </div>
+            </div>
+            <div class="card" data-date="2024-10-01" data-type="Научное">
+                <div class="card-content">
+                    <h3 class="card-title">Первая школа-конференция молодых ученых с международным участием «Ионные проводники: от моделирования к эксперименту»</h3>
+                    <p class="card-date">01.10.2024-05.10.2024</p>
+                    <p class="card-type">Научное</p>
+                    <p class="card-description">Тематика: <br />
+                      Представление современных методов теоретического и экспериментального анализа проводящих свойств кристаллических материалов, 
+                      актуальные вопросы развития систем электрохимического хранения энергии. В рамках конференции будут проведены мастер-классы по
+                       моделированию проводящих свойств твёрдых тел с использованием разных подходов. Ведущие ученые представят доклады, посвященные актуальным достижениям в 
+                       разработке новых материалов для электрохимических систем хранения и преобразования энергии.</p>
+                    <button class="card-button">Увидеть больше</button>
+                </div>
+            </div>
+            <div class="card" data-date="2024-04-01" data-type="Научное">
+                <div class="card-content">
+                    <h3 class="card-title"> Всероссийская конференция  «Актуальные проблемы метода акустической эмиссии» (АПМАЭ 2024)</h3>
+                    <p class="card-date">01.04.2024-05.04.2024</p>
+                    <p class="card-type">Научное</p>
+                    <p class="card-description">Метод акустической эмиссии (АЭ) – один из перспективных методов неразрушающего контроля и технической диагностики. 
+                      Он обладает высокой чувствительностью и уникальными диагностическими возможностями. В настоящее время метод АЭ остается самым наукоемким методом, 
+                      лежащим на стыке механики разрушения, физической акустики, схемотехники, радиотехники и информационных технологий.</p>
+                    <button class="card-button">Увидеть больше</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const buttons = document.querySelectorAll(".card-button");
+            const cardsContainer = document.getElementById("cards-container");
+            const sortDateButton = document.getElementById("sort-date");
+            const sortTypeButton = document.getElementById("sort-type");
+
+            buttons.forEach(button => {
+                button.addEventListener("click", function() {
+                    const card = this.parentNode;
+                    const description = card.querySelector(".card-description");
+                    description.style.height = description.style.height === '0px' || description.style.height === '' ? description.scrollHeight + 'px' : '0px';
+                });
+            });
+
+            sortDateButton.addEventListener("click", function() {
+                const cards = Array.from(document.querySelectorAll(".card"));
+                cards.sort((a, b) => new Date(a.getAttribute("data-date")) - new Date(b.getAttribute("data-date")));
+
+                cardsContainer.innerHTML = '';
+                let currentSection = '';
+
+                cards.forEach(card => {
+                    const date = new Date(card.getAttribute("data-date")).toLocaleDateString('ru-RU', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+
+                    if (date !== currentSection) {
+                        currentSection = date;
+                        const sectionHeader = document.createElement('div');
+                        sectionHeader.className = 'section-header';
+                        sectionHeader.textContent = currentSection;
+                        cardsContainer.appendChild(sectionHeader);
+                    }
+
+                    cardsContainer.appendChild(card);
+                });
+            });
+
+            sortTypeButton.addEventListener("click", function() {
+                const cards = Array.from(document.querySelectorAll(".card"));
+                cards.sort((a, b) => a.getAttribute("data-type").localeCompare(b.getAttribute("data-type")));
+
+                cardsContainer.innerHTML = '';
+                let currentSection = '';
+
+                cards.forEach(card => {
+                    const type = card.getAttribute("data-type");
+
+                    if (type !== currentSection) {
+                        currentSection = type;
+                        const sectionHeader = document.createElement('div');
+                        sectionHeader.className = 'section-header';
+                        sectionHeader.textContent = currentSection;
+                        cardsContainer.appendChild(sectionHeader);
+                    }
+
+                    cardsContainer.appendChild(card);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
